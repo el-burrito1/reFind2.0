@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD90W6MypWGP6s4luD2kQHhZ9IFQrfr04g&sensor=true&libraries=visualization"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/facebook.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+        <div data-role="page" id="login" class="type-home">
+
+            <input type='image' src='img/Default.png' id='mainLogo'/>
+
+            <input type='image' src='img/facebook-login-button.png' id='login-with-facebook'/>
+
+        </div>
+
+        <div data-role='page' class='page-map' id='homepage'>
+          
+
+            <a href='#userPanel' class='ui-btn-left ui-icon-user ui-btn-icon-notext bigButton'></a>
+            <a href='#listPanel' class='ui-btn-right ui-icon-bars ui-btn-icon-notext bigButton'></a>
+
+                <div data-role='panel' id='userPanel' data-display='overlay'>
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Relationship Status:</legend>
+                                <input type="radio" name="radio-choice-1" id="single" value="choice-single" class='relationshipButton' />
+                                <label for="single" id='singleLabel'>Single</label>
+
+                                <input type="radio" name="radio-choice-1" id="couple" value="choice-couple" class='relationshipButton'  />
+                                <label for="couple" id='coupleLabel'>In Relationship</label>
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup" data-mini="true">
+                            <legend>Gender Preference:</legend>
+                                <input type="radio" name="radio-choice-2" id="male" value="choice-male" class='preferenceButton'/>
+                                <label for="male">Male</label>
+
+                                <input type="radio" name="radio-choice-2" id="female" value="choice-female" class='preferenceButton'/>
+                                <label for="female">Female</label>
+                        </fieldset>
+
+                        <fieldset data-role="controlgroup" data-mini="true" id="facebookGroups">
+                            <legend>Facebook Groups:</legend>
+                                
+                        </fieldset>
+
+                    <a href="#homepage" data-rel="close" class='panelButton'>Close panel</a>
+                </div>
+
+                <div data-role='panel' id='listPanel' data-display='overlay' data-position='right'>
+                        <fieldset data-role="controlgroup" data-mini="true" id="facebookEvents">
+                            <legend>Facebook Events:</legend>
+                                
+                        </fieldset>
+
+                    <a href="#homepage" data-rel="close" class='panelButton'>Close panel</a>
+                </div>
+
+            <div data-role='content'>
+                <div id='map-canvas'></div>
+                <div class='buttonContainer'>
+                    <input class='ui-btn single' type='button' value='singles' data-inline='true' id='singlesBtn' />
+                    <input class='ui-btn couple' type='button' value='couples' data-inline='true' id='couplesBtn' />
+                    <input class='ui-btn all' type='button' value='view all' data-inline='true' id='viewAllBtn'/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
