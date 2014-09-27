@@ -100,6 +100,18 @@ function startLoad(){
 		    		function(response){
 		    			console.log(response)
 		    			updateMapandUser(response)
+		    			var events = []
+	    	            for(var i=0; i < response.events.data.length; i++){events.push(response.events.data[i].name)}
+    	            	if(events.length > 0){
+    	            		$('#facebookEvents input').remove();
+    	            		var initialEvent = '<input type="radio" id="noEvents" name="radio-choice-4" checked="checked"/>'+'<label for="noEvents">' + 'NO EVENTS' + '</label>';
+    	            		var eventRadios = ''
+    	            		for(var i = 0 ; i <events.length ; i++){
+    	            			eventRadios += '<input type="radio" name="radio-choice-4" id="' + events[i] + '"/>' + '<label for="' + events[i] + '">' + events[i] + '</label>';
+    	            		}
+    	            		$('#facebookEvents').append(initialEvent).enhanceWithin();
+    	            		$('#facebookEvents').append(eventRadios).enhanceWithin();
+    	            	}
 		    		},
 		    		function(error){console.log(error)})
 			} else {
@@ -126,6 +138,18 @@ function FBlogin(){
     		    			$('#male').attr('checked' , true).checkboxradio('refresh')
     		    		}
 						createMapandUser(response)
+		    			var events = []
+	    	            for(var i=0; i < response.events.data.length; i++){events.push(response.events.data[i].name)}
+    	            	if(events.length > 0){
+    	            		$('#facebookEvents input').remove();
+    	            		var initialEvent = '<input type="radio" id="noEvents" name="radio-choice-4" checked="checked"/>'+'<label for="noEvents">' + 'NO EVENTS' + '</label>';
+    	            		var eventRadios = ''
+    	            		for(var i = 0 ; i <events.length ; i++){
+    	            			eventRadios += '<input class="facebookEvents" type="radio" name="radio-choice-4" id="' + events[i] + '"/>' + '<label for="' + events[i] + '">' + events[i] + '</label>';
+    	            		}
+    	            		$('#facebookEvents').append(initialEvent).enhanceWithin();
+    	            		$('#facebookEvents').append(eventRadios).enhanceWithin();
+    	            	}
 					},
 					function(error){console.log(error)})
 			} else {
@@ -296,6 +320,43 @@ function readCouples(){
 		function(error){console.log(error)})
 }
 
+function readEvents(){
+    var events 
+    events = $('input[name=radio-choice-4]:checked').attr('id')
+    console.log(events)
+            $.ajax({
+                    type: 'GET',
+                    url:"http://localhost:3000/readevents",
+                    data: {'events':events},
+                    dataType: 'jsonp',
+                    contentType: 'application/json',
+                    crossDomain: true,
+                    success: function(data){
+                        console.log(data)
+                        var latitude     = []
+                        var longitude    = []
+                        var locationData = []
+                        for(var i=0; i < data.length; i++){
+                            latitude.push(data[i].latitude)
+                            longitude.push(data[i].longitude)
+                        }
+                        for(var i=0; i < latitude.length; i++){locationData.push(new google.maps.LatLng(latitude[i],longitude[i]))}
+
+                        var heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
+                        heatmap.setMap(map);
+                        removeMap()
+                    },
+                    error: function(){console.log('there was an error')}
+                });
+}
+
+function removeMap(){
+    setTimeout(function(){
+        heatmap.setMap(null)
+    },5000)
+}
+
+
 $(document).on('ready' , function(){
 	var events,map;
 
@@ -306,6 +367,8 @@ $(document).on('ready' , function(){
 	$('#viewAllBtn').on('click' , function(){readAll()});
 	$('#singlesBtn').on('click' , function(){readSingles()});
 	$('#couplesBtn').on('click' , function(){readCouples()});
+
+	$('#facebookEvents').bind('change' , function(){readEvents()})
 
 	document.addEventListener("deviceready" , getStatus, false);
 	document.addEventListener("resume", startLoad, false);
