@@ -33,6 +33,8 @@ function createMapandUser(response){
     	var center = map.getCenter();
    	    google.maps.event.trigger(map, "resize");
    	    map.setCenter(center);
+        heatmap = new google.maps.visualization.HeatmapLayer()
+        map.setMap(map)
 	},function(error){console.log(error)});	
 }
 
@@ -87,6 +89,8 @@ function updateMapandUser(response){
     	var center = map.getCenter();
    	    google.maps.event.trigger(map, "resize");
    	    map.setCenter(center);
+        heatmap = new google.maps.visualization.HeatmapLayer()
+        map.setMap(map)
 	},function(error){console.log(error)});	
 }
 
@@ -241,7 +245,7 @@ function readAll(){
     		    		}
     		    		for(var i=0; i < latitude.length; i++){locationData.push(new google.maps.LatLng(latitude[i],longitude[i]))}
 
-    		    		var heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
+    		    		heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
     		    		heatmap.setMap(map);
     		    	},
     		    	error: function(){console.log('there was an error')}
@@ -275,7 +279,7 @@ function readSingles(){
     		    		}
     		    		for(var i=0; i < latitude.length; i++){locationData.push(new google.maps.LatLng(latitude[i],longitude[i]))}
 
-    		    		var heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
+    		    		heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
     		    		heatmap.setMap(map);
     		    	},
     		    	error: function(){console.log('there was an error')}
@@ -311,7 +315,7 @@ function readCouples(){
     		    		}
     		    		for(var i=0; i < latitude.length; i++){locationData.push(new google.maps.LatLng(latitude[i],longitude[i]))}
 
-    		    		var heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
+    		    		heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
     		    		heatmap.setMap(map);
     		    	},
     		    	error: function(){console.log('there was an error')}
@@ -342,26 +346,32 @@ function readEvents(){
                         }
                         for(var i=0; i < latitude.length; i++){locationData.push(new google.maps.LatLng(latitude[i],longitude[i]))}
 
-                        var heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
+                        heatmap = new google.maps.visualization.HeatmapLayer({data: locationData});
                         heatmap.setMap(map);
                     },
                     error: function(){console.log('there was an error')}
                 });
 }
 
+function clearMap(callback){
+    heatmap.setMap(null)
+    callback()
+}
+
 
 $(document).on('ready' , function(){
-	var events,map;
+	var map,heatmap;
 
 	$('#login-with-facebook').on('click' , function(){FBlogin()});
 	$('.relationshipButton').bind('change' , function(){relationshipChange()});
 	$('.preferenceButton').bind('change' , function(){preferenceChange()});
 
-	$('#viewAllBtn').on('click' , function(){readAll()});
-	$('#singlesBtn').on('click' , function(){readSingles()});
-	$('#couplesBtn').on('click' , function(){readCouples()});
+	$('#viewAllBtn').on('click' , function(){clearMap(readAll)});
 
-	$('#facebookEvents').bind('change' , function(){readEvents()})
+	$('#singlesBtn').on('click' , function(){clearMap(readSingles)});
+	$('#couplesBtn').on('click' , function(){clearMap(readCouples)});
+
+	$('#facebookEvents').bind('change' , function(){clearMap(readEvents)});
 
 	document.addEventListener("deviceready" , getStatus, false);
 	document.addEventListener("resume", startLoad, false);
