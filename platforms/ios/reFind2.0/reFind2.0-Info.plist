@@ -16,6 +16,12 @@
       <dict>
         <key>CFBundleIconFiles</key>
         <array>
+          <string>refined_logo_80x80</string>
+          <string>refined_logo_58x58</string>
+          <string>refined_logo_29x29</string>
+          <string>refined_logo_120x120</string>
+          <string>refined_logo_114x114</string>
+          <string>refined_logo_57x57</string>
           <string>icon-40</string>
           <string>icon-small</string>
           <string>icon-60</string>
@@ -34,6 +40,16 @@
       <dict>
         <key>CFBundleIconFiles</key>
         <array>
+          <string>refined_logo_58x58</string>
+          <string>refined_logo_29x29</string>
+          <string>refined_logo_80x80</string>
+          <string>refined_logo_40x40</string>
+          <string>refined_logo_100x100</string>
+          <string>refined_logo_50x50</string>
+          <string>refined_logo_152x152</string>
+          <string>refined_logo_76x76</string>
+          <string>refined_logo_144x144</string>
+          <string>refined_logo_72x72</string>
           <string>icon-small</string>
           <string>icon-40</string>
           <string>icon-50</string>
@@ -56,33 +72,10 @@
     <string>${PRODUCT_NAME}</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
-    <key>CFBundleSignature</key>
-    <string>????</string>
-    <key>CFBundleVersion</key>
-    <string>1.0</string>
-    <key>LSRequiresIPhoneOS</key>
-    <true/>
-    <key>NSMainNibFile</key>
-    <string></string>
-    <key>NSMainNibFile~ipad</key>
-    <string></string>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationLandscapeLeft</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
-      <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
     <key>CFBundleShortVersionString</key>
     <string>0.0.1</string>
-    <key>FacebookAppID</key>
-    <string>443530475777959</string>
-    <key>FacebookDisplayName</key>
-    <string>spencerspiegelapp</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
     <key>CFBundleURLTypes</key>
     <array>
       <dict>
@@ -1813,6 +1806,148 @@
           <string>fb443530475777959</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>fb443530475777959</string>
+        </array>
+      </dict>
+    </array>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>FacebookAppID</key>
+    <string>443530475777959</string>
+    <key>FacebookDisplayName</key>
+    <string>spencerspiegelapp</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSMainNibFile</key>
+    <string></string>
+    <key>NSMainNibFile~ipad</key>
+    <string></string>
+    <key>UILaunchImageFile</key>
+    <string>Default</string>
+    <key>UILaunchImages</key>
+    <array>
+      <dict>
+        <key>UILaunchImageMinimumOSVersion</key>
+        <string>7.0</string>
+        <key>UILaunchImageName</key>
+        <string>refined_logo_640x1136</string>
+        <key>UILaunchImageOrientation</key>
+        <string>Portrait</string>
+        <key>UILaunchImageSize</key>
+        <string>{320, 568}</string>
+      </dict>
+      <dict>
+        <key>UILaunchImageMinimumOSVersion</key>
+        <string>7.0</string>
+        <key>UILaunchImageName</key>
+        <string>refined_logo_640x960</string>
+        <key>UILaunchImageOrientation</key>
+        <string>Portrait</string>
+        <key>UILaunchImageSize</key>
+        <string>{320, 480}</string>
+      </dict>
+      <dict>
+        <key>UILaunchImageMinimumOSVersion</key>
+        <string>7.0</string>
+        <key>UILaunchImageName</key>
+        <string>refined_logo_640x1136</string>
+        <key>UILaunchImageOrientation</key>
+        <string>Portrait</string>
+        <key>UILaunchImageSize</key>
+        <string>{320, 568}</string>
+      </dict>
+    </array>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
   </dict>
 </plist>

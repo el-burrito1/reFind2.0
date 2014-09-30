@@ -13,7 +13,7 @@ function createMapandUser(response){
 
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/createuser",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/createuser",
     		    	data: {
     		    		'latitude' : position.coords.latitude, 
     		    		'longitude': position.coords.longitude,
@@ -53,7 +53,7 @@ function updateMapandUser(response){
 
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/updateuser",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/updateuser",
     		    	data: {
     		    		'latitude' : position.coords.latitude, 
     		    		'longitude': position.coords.longitude,
@@ -183,7 +183,7 @@ function relationshipChange(){
 			console.log(single)
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/updaterelationship",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/updaterelationship",
     		    	data: {
     		    		'ID'      : response.id,
     		    		'status'  : single
@@ -211,7 +211,7 @@ function preferenceChange(){
 			console.log(preferenceOpposite)
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/updatepreference",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/updatepreference",
     		    	data: {
     		    		'ID'                  : response.id,
     		    		'preferenceOpposite'  : preferenceOpposite
@@ -229,7 +229,7 @@ function preferenceChange(){
 function readAll(){
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/readall",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/readall",
     		    	data: {'readAll':'readall'},
     		    	dataType: 'jsonp',
     		    	contentType: 'application/json',
@@ -263,7 +263,7 @@ function readSingles(){
 			}
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/readsingles",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/readsingles",
     		    	data: {'gender':response.gender,'preferenceOpposite':preferenceOpposite},
     		    	dataType: 'jsonp',
     		    	contentType: 'application/json',
@@ -299,7 +299,7 @@ function readCouples(){
 			}
 			$.ajax({
     		    	type: 'GET',
-    		    	url:"http://localhost:3000/readcouples",
+    		    	url:"http://hidden-brushlands-6469.herokuapp.com/readcouples",
     		    	data: {'gender':response.gender,'preferenceOpposite':preferenceOpposite},
     		    	dataType: 'jsonp',
     		    	contentType: 'application/json',
@@ -330,7 +330,7 @@ function readEvents(){
     console.log(events)
             $.ajax({
                     type: 'GET',
-                    url:"http://localhost:3000/readevents",
+                    url:"http://hidden-brushlands-6469.herokuapp.com/readevents",
                     data: {'events':events},
                     dataType: 'jsonp',
                     contentType: 'application/json',

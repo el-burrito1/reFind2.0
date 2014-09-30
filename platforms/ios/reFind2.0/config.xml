@@ -42,6 +42,7 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+    <icon height="57" platform="ios" src="platforms/reFind2.0/Resources/icons/refined_logo_57x57.png" width="57" />
     <content src="index.html" />
     <access origin="*" />
     <gap:plugin name="com.phonegap.plugins.facebookconnect">
