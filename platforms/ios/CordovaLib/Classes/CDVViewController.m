@@ -78,8 +78,9 @@
         self.supportedOrientations = [self parseInterfaceOrientations:
             [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UISupportedInterfaceOrientations"]];
 
+        [self printVersion];
         [self printMultitaskingInfo];
-        [self printDeprecationNotice];
+        [self printPlatformVersionWarning];
         self.initialized = YES;
 
         // load config.xml settings
@@ -118,10 +119,15 @@
     [super viewWillDisappear:animated];
 }
 
-- (void)printDeprecationNotice
+- (void)printVersion
 {
-    if (!IsAtLeastiOSVersion(@"5.0")) {
-        NSLog(@"CRITICAL: For Cordova 2.0, you will need to upgrade to at least iOS 5.0 or greater. Your current version of iOS is %@.",
+    NSLog(@"Apache Cordova native platform version %@ is starting.", CDV_VERSION);
+}
+
+- (void)printPlatformVersionWarning
+{
+    if (!IsAtLeastiOSVersion(@"6.0")) {
+        NSLog(@"CRITICAL: For Cordova 3.5.0 and above, you will need to upgrade to at least iOS 6.0 or greater. Your current version of iOS is %@.",
             [[UIDevice currentDevice] systemVersion]
             );
     }
@@ -506,8 +512,8 @@
 {
     // First, ask the webview via JS if it supports the new orientation
     NSString* jsCall = [NSString stringWithFormat:
-        @"window.shouldRotateToOrientation && window.shouldRotateToOrientation(%d);"
-        , [self mapIosOrientationToJsOrientation:interfaceOrientation]];
+        @"window.shouldRotateToOrientation && window.shouldRotateToOrientation(%ld);"
+        , (long)[self mapIosOrientationToJsOrientation:interfaceOrientation]];
     NSString* res = [webView stringByEvaluatingJavaScriptFromString:jsCall];
 
     if ([res length] > 0) {
@@ -697,7 +703,7 @@
         CDVPlugin* plugin = [pluginObjects objectForKey:pluginName];
         SEL selector = NSSelectorFromString(@"shouldOverrideLoadWithRequest:navigationType:");
         if ([plugin respondsToSelector:selector]) {
-            if ((BOOL)objc_msgSend(plugin, selector, request, navigationType) == YES) {
+            if (((BOOL (*)(id, SEL, id, int))objc_msgSend)(plugin, selector, request, navigationType) == YES) {
                 return NO;
             }
         }

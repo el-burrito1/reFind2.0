@@ -40,6 +40,7 @@ function createMapandUser(response){
 
 function updateMapandUser(response){
 	navigator.geolocation.getCurrentPosition(function(position){
+        console.log('success function')
     	function initialize (){
 	    	var mapOptions = {
 	    		center    : new google.maps.LatLng(position.coords.latitude, position.coords.longitude),

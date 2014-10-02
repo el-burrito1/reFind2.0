@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>906A484E-E004-4898-BDCC-7AEAB5E32A75</string>
+	<string>2F7F5049-404D-4635-9309-18C00693E1B2</string>
 	<key>IDESourceControlProjectName</key>
 	<string>reFind2.0</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7C0E88C5-E375-4CBE-A13D-82C2A032946E</key>
+		<key>BA5B11E9A6ADF223BDC9719E58F217140AA45947</key>
 		<string>https://github.com/spencerspiegel/reFind2.0.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/reFind2.0.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/reFind2.0.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7C0E88C5-E375-4CBE-A13D-82C2A032946E</key>
+		<key>BA5B11E9A6ADF223BDC9719E58F217140AA45947</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/spencerspiegel/reFind2.0.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7C0E88C5-E375-4CBE-A13D-82C2A032946E</string>
+	<string>BA5B11E9A6ADF223BDC9719E58F217140AA45947</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7C0E88C5-E375-4CBE-A13D-82C2A032946E</string>
+			<string>BA5B11E9A6ADF223BDC9719E58F217140AA45947</string>
 			<key>IDESourceControlWCCName</key>
 			<string>reFind2.0</string>
 		</dict>
